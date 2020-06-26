@@ -43,14 +43,19 @@
                 "drgeller" => "Wewereonabreak"
             );
 
+            $valid = false;
             foreach ($account_database as $account_username =>
             $account_password) {
                 if ($username == $account_username and $password ==
                 $account_password ) {
                     echo "Welcome!";
-                } else {
-                    echo "Incorrect username and/or password";
+                    $valid = true;
+                    break;
                 }
+            }
+
+            if ($valid == false) {
+                echo "Incorrect username and/or password";
             }
         }
      ?>
